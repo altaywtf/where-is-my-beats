@@ -1,4 +1,3 @@
-var webPage = require('webpage');
 var system = require('system');
 var args = system.args;
 
@@ -7,6 +6,7 @@ if (args.length < 3) {
   phantom.exit();
 }
 
+var webPage = require('webpage');
 var page = webPage.create();
 
 var testindex = 0;

@@ -7,6 +7,6 @@ A CLI tool for checking Troy repair service status.
 ```
 npm start <serviceNumber> <serialNumber>
 
-# example: Altay's beast
+# example: Altay's old Beats™
 npm start 1611-40475 FL6RX7KEG8PM
 ```
