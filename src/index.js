@@ -57,12 +57,17 @@ var steps = [
   function() {
     page.evaluate(function() {
       console.log('here is the result...');
+      try {
+        var result = document.getElementsByClassName("label")[0].innerHTML;
+        console.log(result);
 
-      var result = document.getElementsByClassName("label")[0].innerHTML;
-      console.log(result);
+        var report = document.getElementsByClassName("col-md-12")[1].innerHTML;
+        console.log(report);
+      } catch(err){
+        console.log("Something went wrong... Please check your serialNumber and serviceNumber.");
+      }
 
-      var report = document.getElementsByClassName("col-md-12")[1].innerHTML;
-      console.log(report);
+
     });
   },
 ];
