@@ -4,6 +4,7 @@ var args = system.args;
 
 if (args.length < 3) {
   console.log('USAGE: npm start <serviceNumber> <serialNumber>');
+  phantom.exit();
 }
 
 var page = webPage.create();
