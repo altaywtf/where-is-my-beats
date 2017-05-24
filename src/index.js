@@ -1,4 +1,11 @@
 var webPage = require('webpage');
+var system = require('system');
+var args = system.args;
+
+if (args.length < 3) {
+  console.log('USAGE: npm start <serviceNumber> <serialNumber>');
+}
+
 var page = webPage.create();
 
 var testindex = 0;
@@ -35,16 +42,16 @@ var steps = [
   },
 
   function() {
-    page.evaluate(function() {
+    page.evaluate(function(args) {
       console.log('filling form...');
 
-      var serviceNumber = "1611-40475";
-      var serialNumber = "FL6RX7KEG8PM";
+      var serviceNumber = args[1];
+      var serialNumber = args[2];
 
       document.getElementById("service_no").value = serviceNumber;
       document.getElementById("serial_no").value = serialNumber;
       document.getElementById("form_case_lookup").submit();
-    });
+    }, args);
   },
 
   function() {
